@@ -113,7 +113,7 @@ begin
         LHorseHealthCheckResult := AHorseHealthCheck.CheckHealth;
         LFinishAt := Now();
         LJsonObjectCheckHealth := LHorseHealthCheckResult.ToJson;
-        LJsonObjectCheckHealth.AddPair('duration', FormatDateTime('hh:nn:ss:zzz', LFinishAt - LStartAt));
+        LJsonObjectCheckHealth.AddPair('duration', FormatDateTime('hh:nn:ss.zzz', LFinishAt - LStartAt));
         LJsonObjectResult.AddPair(ACheckName, LJsonObjectCheckHealth);
       finally
         FreeAndNil(LHorseHealthCheckResult);
